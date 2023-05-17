@@ -62,6 +62,7 @@ pip install xkivy-1.0.1.tar.gz
 To use this module, you just have to do the same procedure when creating a kivy/kivymd App. 
 
 Example ::
+
     from kivy.app import App
     from xkivy.uix.button import XRectangularButton as XButton
 
