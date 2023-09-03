@@ -1,4 +1,4 @@
-[icon](assets/xkivy.png)
+![icon](https://github.com/digreatbrian/xkivy/blob/main/assets/xkivy.jpg)
 
 # XKivy
 
