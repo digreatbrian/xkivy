@@ -1,3 +1,5 @@
+[icon](assets/xkivy.png)
+
 # XKivy
 
 A kivy and kivymd extension module for easy accessibility, creation of new widgets and also adding more functionality. 
