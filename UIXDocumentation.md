@@ -4,9 +4,10 @@
 
 Important Attributes to use on every XKivy Widget
 ```
-xbg_color : Changing Background Color
-xradius   : Changing Widget Radius
-
+xbg_color :: Changing Background Color
+xradius   :: Changing Widget Radius
+xborder_color :: Changing border color
+xborder_width :: Changing border width
 ```
 
 ## from xkivy.uix.button
