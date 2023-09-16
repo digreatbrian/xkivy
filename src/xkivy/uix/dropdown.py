@@ -25,16 +25,19 @@ Example::
 
 from kivy.uix.dropdown import DropDown
 from kivy.uix.spinner import Spinner ,SpinnerOption
-from kivy.properties import (
-ListProperty,
-NumericProperty,
-ObjectProperty,
-ColorProperty)
 from kivy.clock import Clock
 from kivy.metrics import dp
+from kivy.properties import (
+	ListProperty,
+	NumericProperty,
+	ObjectProperty,
+	ColorProperty)
+
 from ..effects.uixeffect import UIXEffect
-from ..effects.clickeffect import (CircularRippleEffect,RectangularRippleEffect,
-TouchEffect)
+from ..effects.clickeffect import (
+	RectangularRippleEffect,
+	TouchEffect
+	)
 
 from functools import partial
 

@@ -6,7 +6,7 @@ from kivy.properties import ListProperty ,NumericProperty ,OptionProperty
 from kivy.core.window import Window
 from .layouts import LayoutUIXEffect
 
-class XScreen(Screen):
+class XScreen(LayoutUIXEffect ,Screen):
     pass
 
 class XScreenManager(LayoutUIXEffect,ScreenManager):

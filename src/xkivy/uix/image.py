@@ -12,41 +12,22 @@ from ..effects.uixeffect import UIXEffect
 class XImage(UIXEffect,Widget):
 	source=StringProperty('')
 	def __init__(self,source='',**kwargs):
-		super(XImage,self).__init__(**kwargs)
+		super(XImage, self).__init__(**kwargs)
 		self.source=source
 		if 'xbg_color' not in kwargs.keys():
 			self.xbg_color=[1,1,1,1]
 		
 	def on_source(self,inst,src):
 		if hasattr(self,'rect_instruction'):
-			self.rect_instruction.source=src
-			if self.rect_instruction.needs_redraw:
-				self.redraw_canvas(src)
+			self.rect_instruction.source = src
+			Clock.schedule_once(lambda x:self.on_source(inst ,src))
 		else:
 			def x(*_):
-				self.rect_instruction.source=src
-				
-				if self.rect_instruction.needs_redraw:self.redraw_canvas(src)
-				pass
+				self.rect_instruction.source = src
+				if self.rect_instruction.needs_redraw:
+					self.on_source(inst ,src)
 			Clock.schedule_once(x)
 			
-	def redraw_canvas(self,source):
-		canvas=self.canvas.before
-		
-		newcolor=Color(rgba=self.xbg_color)
-		newrect=Rect(source=source,size=self.size,pos=self.pos)
-		
-		canvas.remove(self.rect_instruction)
-		canvas.remove(self.color_instruction)
-		
-		self.color_instruction=newcolor
-		self.rect_instruction=newrect
-		
-		canvas.add(newcolor)
-		canvas.add(newrect)
-		
-
-
-
+	
 
 

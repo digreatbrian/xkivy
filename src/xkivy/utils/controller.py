@@ -3,7 +3,7 @@ from kivy.properties import ObjectProperty,DictProperty
 __all__=["Controller"]
 
 
-class Controller(object):
+class Controller:
 	'''For controlling the widgets from the main widget.
 	
 	All you need to do is to set the main attribute to the main widget will controll the widget and then set attribs attribute as dict ,key = value ,where key is the attribute of main that will be used to change attribute of the widget and value is the target attribute that will be changed when attribute *key* changes.
@@ -26,7 +26,7 @@ class Controller(object):
 			main.add_widget(container)
 			
 			cont.main=main
-			cont.attribs={'cont_radius':'xradius}
+			cont.attribs={'cont_radius':'xradius'}
 			
 			#whenever main.cont_radius changes ,the main.cont_radius value will be set to cont.xradius.
 		

@@ -1,6 +1,7 @@
+'''Module for doing Kivy graphic operations outside th Main kivy Thread.This also depends on the kivy.clock module.'''
 
 from kivy.clock import Clock
-'''Module for doing Kivy graphic operations outside th Main kivy Thread.This also depends on the kivy.clock module.'''
+
 def xcall(callback ,args=[]):
     '''For calling kivy graphics callback outside the kivy thread.Calling functions/callables with kivy graphics operations safely without raising an issue.'''
     if not isinstance(args ,list):

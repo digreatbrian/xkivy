@@ -9,7 +9,7 @@ from kivy.core.window  import Window
 from platform import platform
 
 class XScrollView(ScrollView):
-    always_overscroll=False
+    always_overscroll = False
     def __init__(self ,**kwargs):
         super().__init__(**kwargs)
         self.load_bar()
@@ -21,15 +21,20 @@ class XScrollView(ScrollView):
         self.bar_margin = dp(3)
         self.bar_width = dp(8)
         self.scroll_type = ['bars' ,'content']
+    
+    def _do_touch_up(self ,*args):
+        try:
+            super()._do_touch_up(*args)
+        except:pass
         
 class XScrollBoxLayout(LayoutUIXEffect,XScrollView):
     """Widget which consists of scrollview and boxlayout .
     Please set the XScrollBoxLayout size_hint for best results.'''
     """
-    orientation=StringProperty('vertical')
-    spacing=NumericProperty(dp(0))
-
+    orientation = StringProperty('vertical')
+    spacing = NumericProperty(dp(0))
     def __init__(self,**kwargs):
+        self._container=XBoxLayout(size_hint=[1,1])
         super().__init__(**kwargs)
         
     def on_orientation(self,inst,o):
@@ -48,14 +53,14 @@ class XScrollBoxLayout(LayoutUIXEffect,XScrollView):
     def prepare_scrollboxlayout(self,*_):
         if hasattr(self,'initialised'):
             if self.initialised==True:return
-        self._container=XBoxLayout(size_hint=[1,1])
+        
         self._container.orientation=self.orientation
         self._container.spacing=self.spacing
         self._container.size_hint=[1,.8]
         
         super().add_widget(self._container)
         Clock.schedule_interval(self.update_cont_size ,.8)
-        self.initialised=True
+        self.initialised = True
         
     def update_wid_size(self ,wid):
         def update(dt):
@@ -117,7 +122,7 @@ class XScrollBoxLayout(LayoutUIXEffect,XScrollView):
                 self._container.height = height
             else:
                 xhint ,yhint =self._container.size_hint
-                self._container.size_hint=[None,y_hint]
+                self._container.size_hint=[None,yhint]
                 self._container.width = width
         Clock.schedule_once(update)
         

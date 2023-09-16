@@ -14,15 +14,23 @@ from kivy.metrics import dp
 class InitError(Exception):
     pass
 
-class XPopup(UIXEffect,Popup):
+class XPopup(UIXEffect, Popup):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
 
+    @property
+    def is_open(self):
+        return self._is_open
+
         
-class XPlainPopup(ModalView,ShadowEffect,CanvasAfterUIXEffect):
+class XPlainPopup(ModalView, ShadowEffect, CanvasAfterUIXEffect):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
         #we use canvasafteruixeffect instead of just uixeffect because we want to draw in canvas.after rather canvas.before
+    
+    @property
+    def is_open(self):
+        return self._is_open
         
 class XBoxPopup(XPlainPopup):
     orientation = OptionProperty('vertical',options=['vertical','horizontal'])
@@ -46,7 +54,7 @@ class XBoxPopup(XPlainPopup):
         self._container.orientation=orientation
         
     def init_popup(self):
-        self._container=XBoxScroll(orientation=self.orientation,spacing = self.spacing);
+        self._container=XBoxScroll(orientation=self.orientation,spacing = self.spacing)
         super().add_widget(self._container)
         self._container.size_hint=[.9,.9]
         self.initialised=True

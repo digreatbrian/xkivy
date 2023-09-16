@@ -11,7 +11,7 @@ class XLabel(LayoutUIXEffect,Label):
         self.fbind('texture_size' ,self.update_label_size)
         
     def update_label_size(self , inst ,size):
-        self.size_hint = [1,None ]
+        self.size_hint = [1, None]
         self.size = size
     
     def on_size(self ,inst,sz):

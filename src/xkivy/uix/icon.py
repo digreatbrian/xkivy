@@ -1,12 +1,16 @@
-from ..effects.clickeffect import CircularRippleEffect
+from ..effects.clickeffect import CircularRippleEffect ,TouchEffect
 from .image import XImage
+from kivy.metrics import dp
 from kivy.properties import StringProperty ,ListProperty
 
 #XIMAGEICON
-class XImageIcon(CircularRippleEffect ,XImage):
-    icon=StringProperty('')
-    size_hint=ListProperty([.5,.5])
-    pos_hint={'center_x':.5,'center_y':.5}
-    def on_icon(self,inst,ico):
+class XImageIcon(CircularRippleEffect ,TouchEffect ,XImage):
+    icon = StringProperty('')
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.size_hint = [None ,None]
+        self.size = [dp(35) ,dp(35)]
+
+    def on_icon(self, inst ,ico):
         pass
 
