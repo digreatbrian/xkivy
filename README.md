@@ -13,8 +13,10 @@ You may use this module with kivymd module for the best experience.This module w
 You can get this module to run on your machine through installing it with pip. 
 
 Using Pip
+	```
     python -m pip install xkivy
-
+	```
+ 
 ### Prerequisites
 
 There is only the need of kivy and kivymd for this module to be running. 
@@ -29,7 +31,7 @@ kivy >= 2.0.0
 
 Installing is simple, through downloading the necessary files and then install or through pip. 
 
-Using pip::
+Using Pip
 
 ```
 pip install xkivy
@@ -63,8 +65,8 @@ pip install xkivy-1.0.1.tar.gz
 
 To use this module, you just have to do the same procedure when creating a kivy/kivymd App. 
 
-Example ::
-
+Example
+```
     from kivy.app import App
     from xkivy.uix.button import XRectangularButton as XButton
 
@@ -74,7 +76,7 @@ Example ::
 
     app=TestApp() 
     app.run()
-
+```
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/digreatbrian/xkivy/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
