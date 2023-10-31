@@ -14,9 +14,8 @@ You can get this module to run on your machine through installing it with pip.
 
 Using Pip
 
-	```
     python -m pip install xkivy
-	```
+	
  
 ### Prerequisites
 
