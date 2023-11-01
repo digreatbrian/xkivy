@@ -88,11 +88,11 @@ Please read [CONTRIBUTING.md](https://github.com/digreatbrian/xkivy/contributors
 See also the list of [contributors](https://github.com/digreatbrian/xkivy/contributors) who participated in this project.
 
 ## Widgets
-To see the flexible widgets that xkivy has ,please follow [UIX-WIDGETS](UIXDocumentation.md)
+To see the flexible widgets that xkivy has ,please follow [UIX-WIDGETS](https://github.com/digreatbrian/xkivy/blob/main/UIXDocumentation.md)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/digreatbrian/xkivy/blob/main/LICENSE) file for details
 
 ## Acknowledgments
 
