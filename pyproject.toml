@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=65.6.3"]
+requires = ["setuptools>=65.6.3", "kivy>=2.0.0", "kivymd>=1.1.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
